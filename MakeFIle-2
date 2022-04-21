@@ -1,0 +1,13 @@
+CC=g++
+CFLAGS=-c -Wall
+
+all: Super
+	
+Super: main.o 
+	$(CC) main.o -o Super
+
+main.o: main.cpp
+	$(CC) $(CFLAGS) main.cpp CalcClass.hpp
+
+clean:
+	rm -rf *.o  CalcClass.hpp.gch
